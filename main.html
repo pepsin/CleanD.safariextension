@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+  var cword
+  cword = safari.extension.settings.cword
+  function cwordChanged() {
+      if (event.key == "cword") {
+          cword = event.newValue;
+      }
+  }
+  safari.extension.settings.addEventListener("change", cwordChanged, false);
+  
+  function returnCWord(event) {
+      event.target.page.dispatchMessage("theCAnswer", safari.extension.settings.cword);
+  }
+ 
+  function respondToGetCWord(theMessageEvent) {
+      if(theMessageEvent.name === "getCWord") {
+          var startVal=theMessageEvent.message;
+          returnCWord(theMessageEvent);
+      }
+  }
+  safari.application.addEventListener("message",respondToGetCWord,false);
+  
+  var hword
+  hword = safari.extension.settings.hword
+  function hwordChanged() {
+      if (event.key == "hword") {
+          hword = event.newValue;
+      }
+  }
+  safari.extension.settings.addEventListener("change", hwordChanged, false);
+  
+  function returnHWord(event) {
+      event.target.page.dispatchMessage("theHAnswer", safari.extension.settings.hword);
+  }
+ 
+  function respondToGetHWord(theMessageEvent) {
+      if(theMessageEvent.name === "getHWord") {
+          var startVal=theMessageEvent.message;
+          returnHWord(theMessageEvent);
+      }
+  }
+  safari.application.addEventListener("message",respondToGetHWord,false);
+</script>
