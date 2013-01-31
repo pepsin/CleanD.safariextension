@@ -11,7 +11,8 @@ $ ->
           if cword.length isnt 0
             reg = RegExp cword,'i'
             if ele.html().match reg
-              ele.parents('tbody').remove()
+              h = ele.parents('tbody')
+              h.css('background-color', '#fdd')
       
   safari.self.addEventListener "message", getCAnswer, false
   getCWord ""
@@ -30,7 +31,6 @@ $ ->
             reg = RegExp hword,'i'
             if ele.html().match reg
               h = ele.parents('tbody')
-              console.log h
               h.css('background-color', '#dfd')
       
   safari.self.addEventListener "message", getHAnswer, false

@@ -1,5 +1,3 @@
-
-
 $(function() {
   var getCAnswer, getCWord, getHAnswer, getHWord;
   getCWord = function(theData) {
@@ -11,7 +9,7 @@ $(function() {
       cword_str = theMessageEvent.message;
       cwords = cword_str.split(',');
       return $('th.subject span a').each(function() {
-        var cword, ele, reg, _i, _len, _results;
+        var cword, ele, h, reg, _i, _len, _results;
         ele = $(this);
         _results = [];
         for (_i = 0, _len = cwords.length; _i < _len; _i++) {
@@ -19,7 +17,8 @@ $(function() {
           if (cword.length !== 0) {
             reg = RegExp(cword, 'i');
             if (ele.html().match(reg)) {
-              _results.push(ele.parents('tbody').remove());
+              h = ele.parents('tbody');
+              _results.push(h.css('background-color', '#fdd'));
             } else {
               _results.push(void 0);
             }
@@ -52,7 +51,6 @@ $(function() {
             reg = RegExp(hword, 'i');
             if (ele.html().match(reg)) {
               h = ele.parents('tbody');
-              console.log(h);
               _results.push(h.css('background-color', '#dfd'));
             } else {
               _results.push(void 0);
