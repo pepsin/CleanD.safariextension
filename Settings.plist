@@ -26,5 +26,15 @@
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>
+	<dict>
+		<key>DefaultValue</key>
+		<string>用英文逗号隔开关注作者名</string>
+		<key>Key</key>
+		<string>word</string>
+		<key>Title</key>
+		<string>关注作者名</string>
+		<key>Type</key>
+		<string>TextField</string>
+	</dict>
 </array>
 </plist>

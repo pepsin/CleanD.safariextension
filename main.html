@@ -42,4 +42,25 @@
       }
   }
   safari.application.addEventListener("message",respondToGetHWord,false);
+  
+  var word
+  word = safari.extension.settings.word
+  function wordChanged() {
+      if (event.key == "word") {
+          word = event.newValue;
+      }
+  }
+  safari.extension.settings.addEventListener("change", wordChanged, false);
+  
+  function returnWord(event) {
+      event.target.page.dispatchMessage("theAnswer", safari.extension.settings.word);
+  }
+ 
+  function respondToGetWord(theMessageEvent) {
+      if(theMessageEvent.name === "getWord") {
+          var startVal=theMessageEvent.message;
+          returnWord(theMessageEvent);
+      }
+  }
+  safari.application.addEventListener("message",respondToGetWord,false);
 </script>
