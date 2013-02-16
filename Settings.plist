@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>DefaultValue</key>
-		<string>用英文逗号隔开屏蔽词</string>
+		<string></string>
 		<key>Key</key>
 		<string>alert</string>
 		<key>Password</key>
@@ -12,27 +12,27 @@
 		<key>Secure</key>
 		<false/>
 		<key>Title</key>
-		<string>屏蔽词</string>
+		<string>屏蔽词,用空格隔开</string>
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<string>用英文逗号隔开关注词</string>
+		<string></string>
 		<key>Key</key>
 		<string>highlight</string>
 		<key>Title</key>
-		<string>关注词</string>
+		<string>关注词,用空格隔开</string>
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>
 	<dict>
 		<key>DefaultValue</key>
-		<string>用英文逗号隔开关注作者名</string>
+		<string></string>
 		<key>Key</key>
 		<string>author</string>
 		<key>Title</key>
-		<string>关注作者名</string>
+		<string>关注作者名,用空格隔开</string>
 		<key>Type</key>
 		<string>TextField</string>
 	</dict>

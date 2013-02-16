@@ -11,15 +11,14 @@
   }
   safari.extension.settings.addEventListener("change", wordsChanged, false);
   
-  function returnWord(event, val) {
-      event.target.page.dispatchMessage("theWords", words[val]);
+  function returnWords(event) {
+    event.target.page.dispatchMessage("theWords", words);
   }
  
-  function respondToGetWord(theMessageEvent) {
-      if(theMessageEvent.name === "getWord") {
-          var startVal=theMessageEvent.message;
-          returnCWord(theMessageEvent);
-      }
+  function respondToGetWords(theMessageEvent) {
+    if(theMessageEvent.name === "getWords") {
+      returnWords(theMessageEvent);
+    }
   }
-  safari.application.addEventListener("message",respondToGetCWord,false);
+  safari.application.addEventListener("message",respondToGetWords,false);
 </script>
