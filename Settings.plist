@@ -6,7 +6,7 @@
 		<key>DefaultValue</key>
 		<string>用英文逗号隔开屏蔽词</string>
 		<key>Key</key>
-		<string>cword</string>
+		<string>alert</string>
 		<key>Password</key>
 		<false/>
 		<key>Secure</key>
@@ -20,7 +20,7 @@
 		<key>DefaultValue</key>
 		<string>用英文逗号隔开关注词</string>
 		<key>Key</key>
-		<string>hword</string>
+		<string>highlight</string>
 		<key>Title</key>
 		<string>关注词</string>
 		<key>Type</key>
@@ -30,7 +30,7 @@
 		<key>DefaultValue</key>
 		<string>用英文逗号隔开关注作者名</string>
 		<key>Key</key>
-		<string>word</string>
+		<string>author</string>
 		<key>Title</key>
 		<string>关注作者名</string>
 		<key>Type</key>
