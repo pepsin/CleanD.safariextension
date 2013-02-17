@@ -6,20 +6,17 @@ $(function() {
     return safari.self.tab.dispatchMessage("getWords", theData);
   };
   highlightTopics = function(theMessageEvent) {
-    var alert_arr, author_arr, highlight_arr, words;
+    var words;
     if (theMessageEvent.name === "theWords") {
       words = theMessageEvent.message;
-      highlight_arr = words.highlight.split(/\s+/);
-      author_arr = words.author.split(/\s+/);
-      alert_arr = words.alert.split(/\s+/);
       $('table.datatable th.subject span a').each(function() {
-        return singleTopicHighLight($(this), alert_arr, "#fdd");
+        return singleTopicHighLight($(this), words.highlight, "#fdd");
       });
       $('table.datatable th.subject span a').each(function() {
-        return singleTopicHighLight($(this), highlight_arr, "#efe");
+        return singleTopicHighLight($(this), words.author, "#efe");
       });
       return $('td.author cite a').each(function() {
-        return singleTopicHighLight($(this), author_arr, "#eef");
+        return singleTopicHighLight($(this), words.alert, "#eef");
       });
     }
   };

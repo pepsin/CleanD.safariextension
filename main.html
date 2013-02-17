@@ -2,15 +2,15 @@
 <script type="text/javascript" src="jquery.min.js"></script>
 <script type="text/javascript" charset="utf-8">
   var words = {
-    alert:safari.extension.settings.alert,
-    highlight:safari.extension.settings.highlight,
-    author:safari.extension.settings.author
+    alert:safari.extension.settings.alert.split(/\s+/),
+    highlight:safari.extension.settings.highlight.split(/\s+/),
+    author:safari.extension.settings.author.split(/\s+/)
   }
   
   function wordsChanged() {
-    words["alert"] = safari.extension.settings.alert;
-    words["highlight"] = safari.extension.settings.highlight;
-    words["author"] = safari.extension.settings.author;
+    words["alert"] = safari.extension.settings.alert.split(/\s+/);
+    words["highlight"] = safari.extension.settings.highlight.split(/\s+/);
+    words["author"] = safari.extension.settings.author.split(/\s+/);
   }
   safari.extension.settings.addEventListener("change", wordsChanged, false);
  

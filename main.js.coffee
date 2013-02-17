@@ -4,15 +4,12 @@ $ ->
   highlightTopics = (theMessageEvent) ->
     if theMessageEvent.name is "theWords"
       words = theMessageEvent.message
-      highlight_arr = words.highlight.split(/\s+/)
-      author_arr = words.author.split(/\s+/)
-      alert_arr = words.alert.split(/\s+/)
       $('table.datatable th.subject span a').each ->
-        singleTopicHighLight $(@), alert_arr, "#fdd"
+        singleTopicHighLight $(@), words.highlight, "#fdd"
       $('table.datatable th.subject span a').each ->
-        singleTopicHighLight $(@), highlight_arr, "#efe"
+        singleTopicHighLight $(@), words.author, "#efe"
       $('td.author cite a').each ->
-        singleTopicHighLight $(@), author_arr, "#eef"
+        singleTopicHighLight $(@), words.alert, "#eef"
 
   singleTopicHighLight = (ele, arr, color) ->
     for atom in arr
