@@ -1,7 +1,10 @@
 
 
 $(function() {
-  var getWord, highlightTopics, singleTopicHighLight;
+  var blue, getWord, green, highlightTopics, red, singleTopicHighLight;
+  red = "#fdd";
+  green = "#efe";
+  blue = "#eef";
   getWord = function(theData) {
     return safari.self.tab.dispatchMessage("getWords", theData);
   };
@@ -10,13 +13,13 @@ $(function() {
     if (theMessageEvent.name === "theWords") {
       words = theMessageEvent.message;
       $('table.datatable th.subject span a').each(function() {
-        return singleTopicHighLight($(this), words.highlight, "#fdd");
+        return singleTopicHighLight($(this), words.highlight, green);
       });
       $('table.datatable th.subject span a').each(function() {
-        return singleTopicHighLight($(this), words.author, "#efe");
+        return singleTopicHighLight($(this), words.alert, red);
       });
       return $('td.author cite a').each(function() {
-        return singleTopicHighLight($(this), words.alert, "#eef");
+        return singleTopicHighLight($(this), words.author, blue);
       });
     }
   };

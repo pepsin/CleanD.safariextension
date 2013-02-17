@@ -1,15 +1,18 @@
 $ ->
+  red = "#fdd"
+  green = "#efe"
+  blue = "#eef"
   getWord = (theData) ->
     safari.self.tab.dispatchMessage "getWords", theData
   highlightTopics = (theMessageEvent) ->
     if theMessageEvent.name is "theWords"
       words = theMessageEvent.message
       $('table.datatable th.subject span a').each ->
-        singleTopicHighLight $(@), words.highlight, "#fdd"
+        singleTopicHighLight $(@), words.highlight, green
       $('table.datatable th.subject span a').each ->
-        singleTopicHighLight $(@), words.author, "#efe"
+        singleTopicHighLight $(@), words.alert, red 
       $('td.author cite a').each ->
-        singleTopicHighLight $(@), words.alert, "#eef"
+        singleTopicHighLight $(@), words.author, blue
 
   singleTopicHighLight = (ele, arr, color) ->
     for atom in arr
