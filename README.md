@@ -9,4 +9,4 @@ CleanD.safariextension
 
 目前已知bug：
 
-关注词等更新后内部Object不会随之更新，暂不明原因
+关注词等更新后内部Object不会随之更新，暂不明原因(已解决)
