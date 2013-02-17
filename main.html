@@ -6,18 +6,17 @@
     highlight:safari.extension.settings.highlight,
     author:safari.extension.settings.author
   }
+  
   function wordsChanged() {
-    words[event.key] = event.newValue;
+    words["alert"] = safari.extension.settings.alert;
+    words["highlight"] = safari.extension.settings.highlight;
+    words["author"] = safari.extension.settings.author;
   }
   safari.extension.settings.addEventListener("change", wordsChanged, false);
-  
-  function returnWords(event) {
-    event.target.page.dispatchMessage("theWords", words);
-  }
  
   function respondToGetWords(theMessageEvent) {
     if(theMessageEvent.name === "getWords") {
-      returnWords(theMessageEvent);
+      theMessageEvent.target.page.dispatchMessage("theWords", words);
     }
   }
   safari.application.addEventListener("message",respondToGetWords,false);
